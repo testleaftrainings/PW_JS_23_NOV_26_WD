@@ -1,0 +1,240 @@
+📑 Agenda for Week1 day 02 - JavaScript core concepts
+
+JavaScript DataTypes
+Variable declaration
+Hoisting
+
+DataTypes in JavaScript
+-----------------------
+
+DataTypes: A data type defines the type of value a variable can store 
+and the operations that can be performed on that value.
+
+Primitive DataTypes:A primitive is a basic data type that holds a single immutable
+-------------------- 
+value and is not an object.
+
+1) Number
+
+The Number data type is used to store all kinds of numeric values, including whole 
+numbers and decimal numbers.
+
+Example
+var age = 25;
+var Price=99.99
+
+2) String
+Stores a sequence of characters or text values. A string is can be written inside single 
+quotes (' '), double quotes (" "), or backticks (` `).
+
+var name = "John";
+var city = 'Chennai';
+var message = `Welcome to Playwright`;
+
+3) Boolean
+The Boolean data type is used when a value can have only two possible states: 
+true or false. It is commonly used in conditions and decision making.
+
+let isLoggedIn = true;
+let isCompleted = false;
+
+4) undefined
+The undefined data type means the variable exists, but no value has been given yet.
+
+var age;
+console.log(age); // undefined
+
+5) Null
+The null data type is used when we intentionally set a variable to have no value.
+var user = null;
+console.log(user); // null
+
+6) Big Int
+
+Used to store very large integers beyond the safe limit of Number.
+
+JavaScript number safe range is from (2^53 - 1) to (2^53 - 1)
+-9007199254740991 to 9007199254740991
+
+If you go beyond this range — JS loses precision
+var num = 9007199254740992;
+
+JavaScript **can't guarantee accuracy**, and you'll get the `ts(80008)` warning in 
+TypeScript because the value might be **rounded**, **inaccurate**, or **unexpected**.
+
+• BigInt is used for very large integers
+• Add n at the end of the number to create BigInt
+• BigInt does not have the safe integer limit like Number
+• Cannot mix Number and BigInt directly in operations
+
+7) Symbol
+
+Symbol is a primitive data type used to create unique and immutable identifiers.
+Each Symbol value is always unique, even if they have the same description.
+
+let id1 = Symbol("userId");
+let id2 = Symbol("userId");
+
+console.log(id1 === id2); // false
+
+Non Primitive DataTypes
+------------------------
+Non-primitive data types are complex data types that can store multiple values.
+They are mutable and stored by reference.
+
+1) Array
+--------
+
+Used to store multiple values in a single variable.
+
+let numbers = [10, 20, 30, 40];
+console.log(numbers[0]); // 10
+
+2) object
+---------
+
+Stores data in key–value pairs.
+
+let user = {
+  name: "Sindhu",
+  age: 25
+};
+
+console.log(user.name); // Sindhu
+
+
+Variable Declaration:
+---------------------
+
+A variable is a named container used to store a value in JavaScript.
+
+JavaScript provides three keywords to declare variables:
+1. var
+2. let
+3. const
+
+
+1) var
+var is used to declare a variable.
+var name = "John";
+var age = 25;
+
+console.log(name);
+console.log(age);
+
+Key points:
+-----------
+
+- var can be redeclared.
+- var can be reassigned.
+- var is function-scoped.
+- var is hoisted.
+
+Example:
+var age = 25;
+age = 30;       // Reassignment allowed
+
+var age = 35;   // Redeclaration allowed
+
+2) let
+let is used to declare a variable whose value can change.
+let city = "Chennai";
+console.log(city);
+
+city = "Bangalore";
+console.log(city);
+
+Key points:
+-----------
+
+- let cannot be redeclared in the same scope.
+- let can be reassigned.
+- let is block-scoped.
+- let is hoisted but cannot be accessed before declaration.
+
+Example:
+let age = 25;
+age = 30;       // Reassignment allowed
+
+But:
+let age = 25;
+let age = 30;   // Error(ReferenceError: Cannot access 'b' before initialization)
+
+3) const
+const is used to declare a variable whose value cannot be reassigned.
+const country = "India";
+
+console.log(country);
+
+Key points:
+-----------
+
+- const cannot be redeclared.
+- const cannot be reassigned.
+- const is block-scoped.
+- const must be initialized when declared.
+
+Example:
+const pi = 3.14;
+
+This is not allowed:
+const pi;
+pi = 3.14; //error(TypeError: Assignment to constant variable.)
+
+Simple Comparison
+------------------
+Keyword	    Redeclare	Reassign	Scope
+
+var	        Yes	        Yes	        Function
+let	        No	        Yes	        Block
+const	    No	        No	        Block
+
+
+Hoisting:
+---------
+
+Hoisting is JavaScript's behavior of processing variable and function declarations before 
+executing the code.
+
+Example:
+//1. var
+
+console.log(age);
+var age = 25;
+
+Output:
+undefined
+
+//internally
+var age;
+console.log(age);
+age = 25;
+
+So, var is hoisted and initialized with undefined.
+
+
+//2. let and const
+let and const are also hoisted, but they cannot be accessed before their declaration.
+
+console.log(age);
+let age = 25;
+
+This gives:
+ReferenceError
+
+Similarly:
+
+console.log(country);
+const country = "India";
+
+This also gives:
+ReferenceError
+
+Important Note:
+----------------
+1. The time period between between variable declaration and value assignment of let or const 
+is called the Temporal Dead Zone (TDZ).
+
+2. var, let, and const are all hoisted, but let and const remain in the Temporal Dead Zone 
+until their declaration is reached.
+

@@ -1,0 +1,140 @@
+📑 Agenda for Week1 day 01 - Kickoff and Introduction to JavaScript
+
+Trainer and Learner Introduction and Kickoff Session
+Break
+JavaScript Introduction and standardization
+
+Notes:
+------
+1. Web application :
+
+
+=> Static Application(HTML+CSS)
+=> Dynamic Application(HTML+CSS+JS)
+
+1. HTML (Hyper Test Markup Language) Tags => Define the structure of the web application.
+2. CSS(Cascading Style Sheet) => Colours in a application.
+3. JavaScript => Interactivity(Event Driven Model)=> Click action is an event driven and JS reponds.
+
+
+2. Validation
+
+2.a. Front End Validation => checks for the format of an username / email / data input
+
+=> JavaScript was used to do the front end validation
+
+
+2.b. Back End Validation => checks the record present in backend server (GitHub server)
+
+
+3. Asynchronous / Non-blocking IO try in console of the browser :
+
+console.log("Step1")
+setTimeout(()=>{console.log("Step2")},3000)
+console.log("Step3")
+
+Output:
+
+ Step1
+ Step3
+ Step2
+
+
+4. Event-Driven Programming Model
+
+Event-driven programming means the application is reactive and responds to events/actions.
+JavaScript waits for events like clicks, keypresses, or messages and executes the corresponding event handler when the event occurs.
+
+
+
+javascript --> interpreter programming language
+           --> light weight(no strict syntax)
+           --> dynamic typing (variable can hold any type of data)
+           --> loosely typed (no need to declare data type)
+           --> node.js engine for execution outside the browser
+           --> js engine (browser specific)
+        Features:
+        ---------
+         --> supports both front end and backend dev (full stack development)
+           --> client side and server side validation
+           --> Event driven architecture
+           --> asynchronous programming
+           --> Single threaded non blocking i/o
+
+
+What is JavaScript
+-------------------
+JavaScript is a lightweight, interpreted, scripting language used to 
+create dynamic and interactive web pages.
+
+Why JavaScript is used
+----------------------
+It allows web pages to respond to user actions like clicks, typing, and navigation 
+without reloading the page.
+
+Problem it solves
+-----------------
+HTML gives structure and CSS gives style, but JavaScript adds behavior and logic to 
+make web applications interactive and functional.
+
+Key points
+----------
+Runs in the browser (client-side)
+Can also run on server using Node.js
+Supports OOP, functional, and event-driven programming
+Widely used in automation tools like Playwright
+
+
+Interpreter
+-----------
+An interpreter reads, translates, and executes code line by line at runtime.
+
+Why used
+--------
+Simple execution model and easy debugging.
+
+Problem it solves
+-----------------
+Allows code to run without a separate compilation step.
+
+
+JIT (Just-In-Time Compiler)
+---------------------------
+JIT compiles code into machine code at runtime, just before execution.
+
+Why used
+---------
+Improves performance by converting frequently used code into optimized native code.
+
+Problem it solves
+-----------------
+Reduces execution time compared to pure interpretation.
+
+Key Differences
+---------------
+
+Interpreter
+-----------
+Executes line by line
+Slower execution
+No optimization
+Errors shown line by line
+
+JIT Compiler
+------------
+Compiles during runtime
+Faster execution
+Optimizes hot code paths
+Better performance for large applications
+
+
+
+js -->transpiled 
+  parsing the code -->byte code exe -->binaries(0's and 1's)
+
+jit compiler
+  variables -->a,b
+   expressions--> *
+
+
+
